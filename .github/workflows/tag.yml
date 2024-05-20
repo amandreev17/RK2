@@ -21,6 +21,10 @@ jobs:
         cd code
         cmake -B build
         cmake --build build
+    - name: Configure test
+      run: |
+        cmake -B build
+        cmake --build build
     - name: Build package
       run: cmake --build build --target package
     - name: Build source package
