@@ -16,6 +16,13 @@ jobs:
           cmake -B build
           cmake --build build
           build/main
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: executable
+          path: build/GumballMachine
+      
       - name: Test
         run: |
           cmake -B build
