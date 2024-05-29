@@ -18,10 +18,10 @@ jobs:
           build/main
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: executable
-          path: build/GumballMachine
+        run: |
+          mkdir artifacts
+          mv _build/*.tar.gz artifacts
+          tree artifacts
       
       - name: Test
         run: |
