@@ -20,7 +20,7 @@ jobs:
       - name: Upload Artifact
         run: |
           mkdir artifacts
-          mv _build/*.tar.gz artifacts
+          mv build/*.tar.gz artifacts
           tree artifacts
       
       - name: Test
