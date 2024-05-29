@@ -16,15 +16,15 @@ jobs:
           cmake -B build
           cmake --build build
           build/main
-
-      - name: Upload Artifact
-        run: |
-          mkdir artifacts
-          mv build/*.tar.gz artifacts
-          tree artifacts
       
       - name: Test
         run: |
           cmake -B build
           cmake --build build
           build/test_app
+          
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: executable
+          path: build/Test
